@@ -1,26 +1,32 @@
-import React from "react"; import { Card, CardContent } from "@/components/ui/card"; import { Input } from "@/components/ui/input"; import { Button } from "@/components/ui/button";
-
-const products = [ { name: "TIGER T9 CLASSY EARPHONE", brand: "TIGER", category: "EARPHONE", price: 50, stock: 13, type: "General", }, { name: "TIGER C4000 AIR SERIES BUDS", brand: "TIGER", category: "BUDS", price: 600, stock: 3, type: "General", }, { name: "TIGER EARHOOK BLUETOOTH HEADSET BUDS", brand: "TIGER", category: "BUDS", price: 380, stock: 1, type: "General", }, { name: "TIGER MINI HEADSET 15HRS BUDS", brand: "TIGER", category: "BUDS", price: 250, stock: 2, type: "General", }, { name: "TIGER HEAD POWER FLASHLIGHT TORCH", brand: "TIGER HEAD POWER", category: "TORCH", price: 70, stock: 4, type: "General", }, ];
-
-export default function StoreFront() { return ( <div className="p-4 space-y-6"> <div className="text-2xl font-bold">Morya Agency - Mobile Accessories</div> <Input placeholder="Search for products..." className="max-w-md" />
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    {products.map((product, index) => (
-      <Card key={index} className="rounded-2xl shadow-md">
-        <CardContent className="p-4">
-          <div className="text-xl font-semibold mb-2">{product.name}</div>
-          <div className="text-sm text-muted-foreground">Brand: {product.brand}</div>
-          <div className="text-sm">Category: {product.category}</div>
-          <div className="text-sm">Type: {product.type}</div>
-          <div className="text-sm">Stock: {product.stock}</div>
-          <div className="text-lg font-bold text-green-600 mt-2">
-            ₹{product.price}
-          </div>
-          <Button className="mt-4 w-full">Add to Cart</Button>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
-</div>
-
-); }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morya Agency</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Morya Agency</h1>
+        <p>Online Mobile Accessories Store</p>
+    </header>
+    <main>
+        <section class="products">
+            <div class="product-card">
+                <img src="images/demo1.jpg" alt="Product 1">
+                <h2>Earphones</h2>
+                <p>Price: ₹299</p>
+            </div>
+            <div class="product-card">
+                <img src="images/demo2.jpg" alt="Product 2">
+                <h2>Mobile Cover</h2>
+                <p>Price: ₹199</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Morya Agency</p>
+    </footer>
+</body>
+</html>
