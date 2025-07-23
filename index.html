@@ -1,73 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Product Price List</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #2a7f62;
-      margin-bottom: 30px;
-    }
-    table {
-      width: 90%;
-      max-width: 700px;
-      margin: 0 auto;
-      border-collapse: collapse;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    thead {
-      background-color: #2a7f62;
-      color: white;
-    }
-    th, td {
-      padding: 12px 15px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    tbody tr:nth-child(even) {
-      background-color: #f3f6f5;
-    }
-    tbody tr:hover {
-      background-color: #d1e7dd;
-    }
-    .price {
-      font-weight: bold;
-      color: #2a7f62;
-    }
-  </style>
-</head>
-<body>
-  <h1>Product Selling Prices</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Product Name</th>
-        <th>Selling Price (₹)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>TIGER T9 CLASSY EARPHONE</td><td class="price">100.00</td></tr>
-      <tr><td>TIGER C4000 AIR SERIES BUDS</td><td class="price">1250.00</td></tr>
-      <tr><td>TIGER EARHOOK BLUETOOTH HEADSET BUDS</td><td class="price">550.00</td></tr>
-      <tr><td>TIGER MINI HEADSET 15HRS BUDS</td><td class="price">400.00</td></tr>
-      <tr><td>TIGER HEAD POWER FLASHLIGHT TORCH</td><td class="price">150.00</td></tr>
-      <tr><td>TIGER HEAD POWER SMALL TORCH</td><td class="price">250.00</td></tr>
-      <tr><td>TIGER HEAD POWER HP-370S TORCH</td><td class="price">400.00</td></tr>
-      <tr><td>TIGER T1+ EXTREME EARPHONE</td><td class="price">180.00</td></tr>
-      <tr><td>LANDMARK LM-270EB HPHOP EARPHONE</td><td class="price">150.00</td></tr>
-      <tr><td>LANDMARK LM-281EB WANTED EARPHONE</td><td class="price">100.00</td></tr>
-      <!-- Add more products here by following the same pattern -->
-    </tbody>
-  </table>
-</body>
-</html>
+import React from "react"; import { Card, CardContent } from "@/components/ui/card"; import { Input } from "@/components/ui/input"; import { Button } from "@/components/ui/button";
+
+const products = [ { name: "TIGER T9 CLASSY EARPHONE", brand: "TIGER", category: "EARPHONE", price: 50, stock: 13, type: "General", }, { name: "TIGER C4000 AIR SERIES BUDS", brand: "TIGER", category: "BUDS", price: 600, stock: 3, type: "General", }, { name: "TIGER EARHOOK BLUETOOTH HEADSET BUDS", brand: "TIGER", category: "BUDS", price: 380, stock: 1, type: "General", }, { name: "TIGER MINI HEADSET 15HRS BUDS", brand: "TIGER", category: "BUDS", price: 250, stock: 2, type: "General", }, { name: "TIGER HEAD POWER FLASHLIGHT TORCH", brand: "TIGER HEAD POWER", category: "TORCH", price: 70, stock: 4, type: "General", }, ];
+
+export default function StoreFront() { return ( <div className="p-4 space-y-6"> <div className="text-2xl font-bold">Morya Agency - Mobile Accessories</div> <Input placeholder="Search for products..." className="max-w-md" />
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {products.map((product, index) => (
+      <Card key={index} className="rounded-2xl shadow-md">
+        <CardContent className="p-4">
+          <div className="text-xl font-semibold mb-2">{product.name}</div>
+          <div className="text-sm text-muted-foreground">Brand: {product.brand}</div>
+          <div className="text-sm">Category: {product.category}</div>
+          <div className="text-sm">Type: {product.type}</div>
+          <div className="text-sm">Stock: {product.stock}</div>
+          <div className="text-lg font-bold text-green-600 mt-2">
+            ₹{product.price}
+          </div>
+          <Button className="mt-4 w-full">Add to Cart</Button>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</div>
+
+); }
