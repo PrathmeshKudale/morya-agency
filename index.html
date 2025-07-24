@@ -8,72 +8,114 @@
 </head>
 <body>
   <header>
+    <img src="images/logo.jpg" alt="Morya Agency Logo" class="logo">
     <h1>Morya Agency</h1>
     <p>Your one-stop shop for mobile accessories</p>
   </header>
+<section class="controls">
+  <input type="text" id="searchInput" placeholder="Search product...">
+  <select id="categoryFilter">
+    <option value="all">All Categories</option>
+    <option value="EARPHONE">EARPHONE</option>
+    <option value="BUDS">BUDS</option>
+    <option value="TORCH">TORCH</option>
+  </select>
+</section>
   <main class="product-grid">
-    
+    <!-- 🔽 Product Cards Start -->
+
     <div class="product-card">
-      <img src="earphone.jpg" alt="TIGER T9 CLASSY EARPHONE">
+      <img src="images/earphone.jpg" alt="TIGER T9 CLASSY EARPHONE">
       <h2>TIGER T9 CLASSY EARPHONE</h2>
       <p>Brand: TIGER</p>
       <p>Category: EARPHONE</p>
       <p>Price: ₹50</p>
       <p>Stock: 13 NOS</p>
-      <a href="https://wa.me/917262822323?text=I want to order TIGER T-17 TYPE-C EARPHONE" class="order-btn" target="_blank">Order Now</a>
+      <a href="https://wa.me/91XXXXXXXXXX?text=I want to order TIGER T9 CLASSY EARPHONE" class="order-btn" target="_blank">Order Now</a>
     </div>
 
     <div class="product-card">
-      <img src="Buds.jpg" alt="TIGER C4000 AIR SERIES BUDS">
+      <img src="images/buds.jpg" alt="TIGER C4000 AIR SERIES BUDS">
       <h2>TIGER C4000 AIR SERIES BUDS</h2>
       <p>Brand: TIGER</p>
       <p>Category: BUDS</p>
       <p>Price: ₹600</p>
       <p>Stock: 3 NOS</p>
+      <a href="https://wa.me/91XXXXXXXXXX?text=I want to order TIGER C4000 AIR SERIES BUDS" class="order-btn" target="_blank">Order Now</a>
     </div>
 
     <div class="product-card">
-      <img src="Buds.jpg" alt="TIGER EARHOOK BLUETOOTH HEADSET BUDS">
+      <img src="images/buds.jpg" alt="TIGER EARHOOK BLUETOOTH HEADSET BUDS">
       <h2>TIGER EARHOOK BLUETOOTH HEADSET BUDS</h2>
       <p>Brand: TIGER</p>
       <p>Category: BUDS</p>
       <p>Price: ₹380</p>
       <p>Stock: 1 NOS</p>
-   <a href="https://wa.me/917262822323?text=I want to order TIGER T-17 TYPE-C EARPHONE" class="order-btn" target="_blank">Order Now</a>
+      <a href="https://wa.me/91XXXXXXXXXX?text=I want to order TIGER EARHOOK BLUETOOTH HEADSET BUDS" class="order-btn" target="_blank">Order Now</a>
     </div>
 
     <div class="product-card">
-      <img src="Buds.jpg" alt="TIGER MINI HEADSET 15HRS BUDS">
+      <img src="images/buds.jpg" alt="TIGER MINI HEADSET 15HRS BUDS">
       <h2>TIGER MINI HEADSET 15HRS BUDS</h2>
       <p>Brand: TIGER</p>
       <p>Category: BUDS</p>
       <p>Price: ₹250</p>
       <p>Stock: 2 NOS</p>
-      <a href="https://wa.me/917262822323?text=I want to order TIGER T-17 TYPE-C EARPHONE" class="order-btn" target="_blank">Order Now</a>
+      <a href="https://wa.me/91XXXXXXXXXX?text=I want to order TIGER MINI HEADSET 15HRS BUDS" class="order-btn" target="_blank">Order Now</a>
     </div>
 
     <div class="product-card">
-      <img src="Torch.jpg" alt="TIGER HEAD POWER FLASHLIGHT TORCH">
+      <img src="images/torch.jpg" alt="TIGER HEAD POWER FLASHLIGHT TORCH">
       <h2>TIGER HEAD POWER FLASHLIGHT TORCH</h2>
       <p>Brand: TIGER HEAD POWER</p>
       <p>Category: TORCH</p>
       <p>Price: ₹70</p>
       <p>Stock: 4 NOS</p>
-      <a href="https://wa.me/917262822323?text=I want to order TIGER T-17 TYPE-C EARPHONE" class="order-btn" target="_blank">Order Now</a>
+      <a href="https://wa.me/91XXXXXXXXXX?text=I want to order TIGER HEAD POWER FLASHLIGHT TORCH" class="order-btn" target="_blank">Order Now</a>
     </div>
-<div class="product-card">
-  <img src="images/earphone.jpg" alt="TIGER T-17 TYPE-C EARPHONE">
-  <h2>TIGER T-17 TYPE-C EARPHONE</h2>
-  <p>Brand: TIGER</p>
-  <p>Category: EARPHONE</p>
-  <p>Price: ₹300</p>
-  <p>Stock: 4 NOS</p>
-  <a href="https://wa.me/917262822323?text=I want to order TIGER T-17 TYPE-C EARPHONE" class="order-btn" target="_blank">Order Now</a>
-</div>
-</div>
+
+    <div class="product-card">
+      <img src="images/earphone.jpg" alt="TIGER T-17 TYPE-C EARPHONE">
+      <h2>TIGER T-17 TYPE-C EARPHONE</h2>
+      <p>Brand: TIGER</p>
+      <p>Category: EARPHONE</p>
+      <p>Price: ₹300</p>
+      <p>Stock: 4 NOS</p>
+      <a href="https://wa.me/91XXXXXXXXXX?text=I want to order TIGER T-17 TYPE-C EARPHONE" class="order-btn" target="_blank">Order Now</a>
+    </div>
+
+    <!-- 🔼 Product Cards End -->
   </main>
+
   <footer>
     <p>&copy; 2025 Morya Agency</p>
   </footer>
+  <script>
+  const searchInput = document.getElementById("searchInput");
+  const categoryFilter = document.getElementById("categoryFilter");
+  const productCards = document.querySelectorAll(".product-card");
+
+  function filterProducts() {
+    const searchText = searchInput.value.toLowerCase();
+    const selectedCategory = categoryFilter.value;
+
+    productCards.forEach(card => {
+      const name = card.querySelector("h2").textContent.toLowerCase();
+      const category = card.querySelector("p:nth-child(4)").textContent.toUpperCase();
+      
+      const matchSearch = name.includes(searchText);
+      const matchCategory = selectedCategory === "all" || category.includes(selectedCategory);
+      
+      if (matchSearch && matchCategory) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  searchInput.addEventListener("input", filterProducts);
+  categoryFilter.addEventListener("change", filterProducts);
+  </script>
 </body>
 </html>
