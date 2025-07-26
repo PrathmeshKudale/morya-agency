@@ -959,3 +959,75 @@ h1 {
 .whatsapp-btn:hover {
   background-color: #1ebd5b;
 }
+/* General Page Style */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Product Grid Container */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+/* Product Image */
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Product Text Info */
+.product-card h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.product-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* WhatsApp Order Button */
+.order-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background-color: #25d366;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.order-btn:hover {
+  background-color: #1ebe57;
+}
