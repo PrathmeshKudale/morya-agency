@@ -27,7 +27,7 @@ footer {
   padding: 20px;
 }
 .product-card {
-  background: white;
+  background: black;
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -222,7 +222,7 @@ footer {
 
 .order-button {
   background-color: #25d366;
-  color: white;
+  color: black;
   border: none;
   padding: 10px 16px;
   font-size: 16px;
